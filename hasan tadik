@@ -1,0 +1,142 @@
+import 'dart:io';
+import 'dart:math';
+enum Durum {rock,paper,scissors}
+
+void main(List<String> args) {
+
+while (true){
+  
+
+var value;
+var pc=0;
+var player=0;
+ 
+
+while (value!=" "&& player<2 && pc<2) {
+  print ("The Movement You Want To Select");
+  var value=stdin.readLineSync();
+  
+  if (value=="rock"||value=="paper" ||value=="scissors") {
+     print("your chosen $value");
+  }
+ 
+ 
+
+ 
+ 
+ if (value=="rock"|| value=="paper"||value=="scissors" ||value=="exit") {
+
+
+ var randnumbr = Random().nextInt(3); 
+ 
+  
+   if (value=="exit") {
+  break;}
+
+if(randnumbr ==0){
+  randnumbr ==Durum.rock;
+  print("the computer's preferred move: rock");
+}
+else if(randnumbr ==1){
+  randnumbr ==Durum.paper;
+  print("the computer's preferred move: kagıt");
+}
+else if(randnumbr ==2){
+  randnumbr ==Durum.scissors;
+  print("the computer's preferred move: makas");
+}
+
+
+
+if (randnumbr==0 && value=="rock" ) {
+  print("quits");
+}
+else if (randnumbr==0 && value=="paper" ) {
+  print("you have won");
+  player++;
+}
+else if (randnumbr==0 && value=="scissors") {
+  print("you lost");
+  pc++;
+}
+
+
+
+else if (randnumbr==1 && value=="rock" ) {
+  print("you lost");
+  pc++;
+}
+else if (randnumbr==1 && value=="paper" ) {
+  print("quits");
+}
+else if (randnumbr==1 && value=="scissors") {
+  print("you have won");
+  player++;
+}
+
+
+
+
+else if (randnumbr==2 && value=="rock" ) {
+  print("you have won");
+  player++;
+}
+else if (randnumbr==2 && value=="paper" ) {
+  print("you lost");
+  pc++;
+}
+else if (randnumbr==2 && value=="scissors") {
+  print("quits");
+}
+
+if (pc==2) {
+  print("Game over, computer won.");
+}
+if (player==2) {
+  print("congratulations you won the game...");
+}
+
+print("Computer:$pc player:$player");
+
+
+
+}
+
+else{
+print("please enter one of the rock, paper, scissors values");
+ continue;
+}
+
+
+}
+ 
+
+ 
+print("type exit to exit the game type anything if you want to continue");
+var devam=stdin.readLineSync();
+
+
+  
+
+if (devam==" ") {
+  continue;
+}
+else if(devam=="exit"){
+break;
+}
+
+
+
+
+
+         
+          
+         
+         
+         
+         
+          }
+
+
+
+}
